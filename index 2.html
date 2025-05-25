@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rupjyoti Mukherjee | Business Analyst</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #e5e5e5;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), 
+                        url('https://i.ibb.co/ch0YtBy6/luke-chesser-JKUTr-J4v-K00-unsplash.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            width: 100%;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #3b82f6;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        .timeline-item:not(:last-child):after {
+            content: '';
+            position: absolute;
+            left: 24px;
+            top: 40px;
+            height: calc(100% - 40px);
+            width: 2px;
+            background-color: #3b82f6;
+        }
+        
+        .profile-img {
+            width: 256px;
+            height: 256px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid #3b82f6;
+            transition: transform 0.3s ease;
+        }
+        
+        .profile-img:hover {
+            transform: scale(1.05);
+        }
+        
+        .skill-meter {
+            height: 8px;
+            background-color: #1f2937;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .skill-level {
+            height: 100%;
+            background-color: #3b82f6;
+            border-radius: 4px;
+            transition: width 1s ease-in-out;
+        }
+        
+        .tab-button {
+            transition: all 0.3s ease;
+        }
+        
+        .tab-button.active {
+            background-color: #3b82f6;
+            color: white;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .floating-card {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-black bg-opacity-80 backdrop-blur-sm">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold text-white">Rupjyoti<span class="text-blue-400">.</span></a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-white hover:text-blue-400">Home</a>
+                    <a href="#about" class="nav-link text-white hover:text-blue-400">About</a>
+                    <a href="#experience" class="nav-link text-white hover:text-blue-400">Experience</a>
+                    <a href="#skills" class="nav-link text-white hover:text-blue-400">Skills</a>
+                    <a href="#contact" class="nav-link text-white hover:text-blue-400">Contact</a>
+                </div>
+                <button class="md:hidden text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg flex items-center justify-center">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">
+                Hi, I'm <span class="text-blue-400">Rupjyoti Mukherjee</span>
+            </h1>
+            <h2 class="text-xl md:text-2xl text-gray-300 mb-8">
+                Business Analyst | AI Enthusiast
+            </h2>
+            <a href="#experience" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-8 rounded-full inline-block transition duration-300 transform hover:scale-105">
+                View My Work
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
+                About <span class="text-blue-400">Me</span>
+            </h2>
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/3 flex justify-center">
+                    <img src="https://i.ibb.co/0jqWNWjJ/Whats-App-Image-2025-05-26-at-2-52-19-AM.jpg"
+                         alt="Rupjyoti Mukherjee" class="profile-img floating-card">
+                </div>
+                <div class="md:w-2/3">
+                    <h3 class="text-2xl font-semibold text-white mb-4">
+                        Business Analytics Professional with a Passion for AI
+                    </h3>
+                    <p class="text-gray-300 mb-4">
+                        I'm a detail-oriented Business Analyst with experience in financial services and a strong interest in artificial intelligence applications for business.
+                    </p>
+                    <p class="text-gray-300 mb-4">
+                        My journey in analytics began with a fascination for data-driven decision making. I specialize in transforming complex data into actionable insights that drive business growth and operational efficiency.
+                    </p>
+                    
+                    <!-- Interactive Tabs -->
+                    <div class="mt-8">
+                        <div class="flex space-x-2 mb-6">
+                            <button class="tab-button active px-4 py-2 rounded-lg bg-gray-800 text-white" onclick="openTab(event, 'skills-tab')">
+                                <i class="fas fa-chart-bar mr-2"></i>Skills
+                            </button>
+                            <button class="tab-button px-4 py-2 rounded-lg bg-gray-800 text-white" onclick="openTab(event, 'education-tab')">
+                                <i class="fas fa-graduation-cap mr-2"></i>Education
+                            </button>
+                            <button class="tab-button px-4 py-2 rounded-lg bg-gray-800 text-white" onclick="openTab(event, 'approach-tab')">
+                                <i class="fas fa-lightbulb mr-2"></i>Approach
+                            </button>
+                        </div>
+                        
+                        <div id="skills-tab" class="tab-content active">
+                            <div class="space-y-4">
+                                <div>
+                                    <div class="flex justify-between mb-1">
+                                        <span class="text-gray-300">Business Analysis</span>
+                                        <span class="text-blue-400">Intermediate</span>
+                                    </div>
+                                    <div class="skill-meter">
+                                        <div class="skill-level" style="width: 70%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between mb-1">
+                                        <span class="text-gray-300">Business Intelligence</span>
+                                        <span class="text-blue-400">Advanced</span>
+                                    </div>
+                                    <div class="skill-meter">
+                                        <div class="skill-level" style="width: 85%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between mb-1">
+                                        <span class="text-gray-300">AI Concepts</span>
+                                        <span class="text-blue-400">Advanced</span>
+                                    </div>
+                                    <div class="skill-meter">
+                                        <div class="skill-level" style="width: 95%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="education-tab" class="tab-content">
+                            <div class="space-y-4">
+                                <div class="bg-gray-800 p-4 rounded-lg">
+                                    <h4 class="text-blue-400 font-medium">PGDM in Business Analytics</h4>
+                                    <p class="text-gray-300">Specialization in Data Science & AI</p>
+                                    <p class="text-gray-400 text-sm mt-1">2023 - 2025</p>
+                                </div>
+                                <div class="bg-gray-800 p-4 rounded-lg">
+                                    <h4 class="text-blue-400 font-medium">Bachelor's Degree</h4>
+                                    <p class="text-gray-300">Commerce & Business Studies</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="approach-tab" class="tab-content">
+                            <div class="space-y-4">
+                                <div class="bg-gray-800 p-4 rounded-lg">
+                                    <h4 class="text-blue-400 font-medium">Data-Driven Decisions</h4>
+                                    <p class="text-gray-300">I believe in making decisions based on solid data analysis rather than intuition alone.</p>
+                                </div>
+                                <div class="bg-gray-800 p-4 rounded-lg">
+                                    <h4 class="text-blue-400 font-medium">Continuous Learning</h4>
+                                    <p class="text-gray-300">I'm committed to staying updated with the latest trends in business analytics and AI.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Quick Facts -->
+                    <div class="mt-8 grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <div class="bg-gray-800 p-4 rounded-lg text-center">
+                            <div class="text-blue-400 text-2xl mb-1">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <p class="text-gray-300 text-sm">Trade Analyst at IDFC First Bank</p>
+                        </div>
+                        <div class="bg-gray-800 p-4 rounded-lg text-center">
+                            <div class="text-blue-400 text-2xl mb-1">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <p class="text-gray-300 text-sm">Data Visualization Expert</p>
+                        </div>
+                        <div class="bg-gray-800 p-4 rounded-lg text-center">
+                            <div class="text-blue-400 text-2xl mb-1">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <p class="text-gray-300 text-sm">AI Enthusiast</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-black">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
+                My <span class="text-blue-400">Experience</span>
+            </h2>
+            <div class="relative">
+                <!-- Timeline -->
+                <div class="space-y-8">
+                    <!-- Experience 1 -->
+                    <div class="timeline-item relative pl-16">
+                        <div class="absolute left-0 top-0 w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center">
+                            <i class="fas fa-briefcase text-white"></i>
+                        </div>
+                        <div class="bg-gray-900 rounded-lg p-6 card-hover">
+                            <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+                                <h3 class="text-xl font-semibold text-white">Trade Analyst, Exchange House</h3>
+                                <span class="text-gray-400">October 2024 - Present</span>
+                            </div>
+                            <h4 class="text-lg text-blue-400 mb-3">IDFC First Bank</h4>
+                            <ul class="list-disc pl-5 space-y-2 text-gray-300">
+                                <li>Analyzed trade transactions and foreign exchange operations</li>
+                                <li>Developed automated reports that significantly reduced manual work</li>
+                                <li>Created interactive dashboards for senior management</li>
+                                <li>Collaborated with cross-functional teams</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Experience 2 -->
+                    <div class="timeline-item relative pl-16">
+                        <div class="absolute left-0 top-0 w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center">
+                            <i class="fas fa-user-graduate text-white"></i>
+                        </div>
+                        <div class="bg-gray-900 rounded-lg p-6 card-hover">
+                            <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+                                <h3 class="text-xl font-semibold text-white">PGDM in Business Analytics</h3>
+                                <span class="text-gray-400">2023 - 2025</span>
+                            </div>
+                            <h4 class="text-lg text-blue-400 mb-3">Specialization in Data Science & AI</h4>
+                            <ul class="list-disc pl-5 space-y-2 text-gray-300">
+                                <li>Coursework in predictive analytics and business intelligence</li>
+                                <li>Capstone project on customer churn prediction</li>
+                                <li>Developed expertise in data visualization</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
+                My <span class="text-blue-400">Skills</span>
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+                <!-- Skill 1 -->
+                <div class="bg-gray-800 rounded-lg p-6 text-center card-hover">
+                    <i class="fas fa-database text-4xl text-blue-400 mb-4"></i>
+                    <h3 class="text-xl font-semibold text-white mb-2">Data Analysis</h3>
+                    <p class="text-gray-300">Excel, Data Visualization</p>
+                </div>
+                
+                <!-- Skill 2 -->
+                <div class="bg-gray-800 rounded-lg p-6 text-center card-hover">
+                    <i class="fas fa-chart-line text-4xl text-blue-400 mb-4"></i>
+                    <h3 class="text-xl font-semibold text-white mb-2">BI Tools</h3>
+                    <p class="text-gray-300">Tableau, Power BI</p>
+                </div>
+                
+                <!-- Skill 3 -->
+                <div class="bg-gray-800 rounded-lg p-6 text-center card-hover">
+                    <i class="fas fa-brain text-4xl text-blue-400 mb-4"></i>
+                    <h3 class="text-xl font-semibold text-white mb-2">AI Concepts</h3>
+                    <p class="text-gray-300">Machine Learning Basics</p>
+                </div>
+                
+                <!-- Skill 4 -->
+                <div class="bg-gray-800 rounded-lg p-6 text-center card-hover">
+                    <i class="fas fa-project-diagram text-4xl text-blue-400 mb-4"></i>
+                    <h3 class="text-xl font-semibold text-white mb-2">Process Improvement</h3>
+                    <p class="text-gray-300">Workflow Optimization</p>
+                </div>
+                
+                <!-- Skill 5 -->
+                <div class="bg-gray-800 rounded-lg p-6 text-center card-hover">
+                    <i class="fas fa-chart-pie text-4xl text-blue-400 mb-4"></i>
+                    <h3 class="text-xl font-semibold text-white mb-2">Reporting</h3>
+                    <p class="text-gray-300">Dashboard Creation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-black">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
+                Get In <span class="text-blue-400">Touch</span>
+            </h2>
+            <div class="max-w-2xl mx-auto">
+                <form class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-gray-300 mb-2">Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-300 mb-2">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="subject" class="block text-gray-300 mb-2">Subject</label>
+                            <input type="text" id="subject" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-gray-300 mb-2">Message</label>
+                        <textarea id="message" rows="5" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"></textarea>
+                    </div>
+                    <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="#" class="text-2xl font-bold text-white">Rupjyoti<span class="text-blue-400">.</span></a>
+                    <p class="text-gray-400 mt-2">Business Analyst & AI Enthusiast</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-blue-400 text-xl">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-blue-400 text-xl">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-blue-400 text-xl">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-blue-400 text-xl">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Rupjyoti Mukherjee. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tab functionality
+        function openTab(evt, tabName) {
+            // Get all tab content elements
+            const tabContents = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove("active");
+            }
+            
+            // Get all tab buttons
+            const tabButtons = document.getElementsByClassName("tab-button");
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove("active");
+            }
+            
+            // Show the current tab and mark button as active
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+        
+        // Animate skill meters on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const skillLevels = document.querySelectorAll('.skill-level');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const width = entry.target.style.width;
+                        entry.target.style.width = '0';
+                        setTimeout(() => {
+                            entry.target.style.width = width;
+                        }, 100);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {threshold: 0.5});
+            
+            skillLevels.forEach(level => {
+                observer.observe(level);
+            });
+        });
+    </script>
+</body>
+</html>
